@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% load static %}
+{% block sidebar %}
+    
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-secondary navbar-dark">
+                <a href="" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i class=" me-2"></i>Vali-Teach</h3>
+                </a>
+         
+                <div class="navbar-nav w-100">
+                    <a href="" class="nav-item nav-link active">Darslar</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Qo'shimcha</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="button.html" class="dropdown-item">Savol berish</a>
+                            <a href="typography.html" class="dropdown-item">Test ishlash</a>
+                            <a href="element.html" class="dropdown-item">Ma'lumot olish</a>
+                        </div>
+                    </div>
+                    {% for lesson in lessons %}
+                    <a href="{% url "get_lessons_item" course=lesson.course.pk lesson=lesson.pk token=token  %}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>{{lesson.name}}</a>
+                    
+                    
+                    {% endfor %}
+                   
+                </div>
+            </nav>
+        </div>
+{% endblock sidebar %}
+
+
+{% block navbar %}
+<nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+    <a href="" class="navbar-brand d-flex d-lg-none me-4">
+        <h2 class="text-primary mb-0"></h2>
+    </a>
+    <a href="#" class="sidebar-toggler flex-shrink-0">
+        <i class="fa fa-bars"></i>
+    </a>
+  
+    <div class="navbar-nav align-items-center ms-auto">
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                <i class="fa fa-envelope me-lg-2"></i>
+                <span class="d-none d-lg-inline-flex">Habarlar</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                <a href="#" class="dropdown-item">
+                    <div class="d-flex align-items-center">
+                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                        <div class="ms-2">
+                            <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                            <small>15 minutes ago</small>
+                        </div>
+                    </div>
+                </a>
+                <hr class="dropdown-divider">
+                <a href="#" class="dropdown-item">
+                    <div class="d-flex align-items-center">
+                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                        <div class="ms-2">
+                            <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                            <small>15 minutes ago</small>
+                        </div>
+                    </div>
+                </a>
+                <hr class="dropdown-divider">
+                <a href="#" class="dropdown-item">
+                    <div class="d-flex align-items-center">
+                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                        <div class="ms-2">
+                            <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                            <small>15 minutes ago</small>
+                        </div>
+                    </div>
+                </a>
+                <hr class="dropdown-divider">
+                <a href="#" class="dropdown-item text-center">See all message</a>
+            </div>
+        </div>
+   
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                <img class="rounded-circle me-lg-2" src="{% static 'img/user.jpg' %}" alt="" style="width: 40px; height: 40px;">
+                <span class="d-none d-lg-inline-flex">John Doe</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                <a href="{% url "my_profil" %}" class="dropdown-item">Profilim</a>                
+                <a href="{% url "logout" %}" class="dropdown-item">Chiqish</a>
+            </div>
+        </div>
+    </div>
+</nav>
+{% endblock navbar %}
+
+{% block content %}
+<div class="container-fluid h-50 p-5 mt-3 ">
+    <div class="row bg-secondary rounded p-2">
+        
+       {% if lesson %}
+       <iframe src="{{lesson.link}}" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+       
+   
+       {% else %}
+      
+       <iframe src="https://player.vimeo.com/video/901000302?h=cb3496e6ad" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+       
+       {% endif %}
+    </div>
+</div>
+{% endblock content %}
+

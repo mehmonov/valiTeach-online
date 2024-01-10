@@ -41,58 +41,24 @@
         <!-- Spinner End -->
 
 
-        <!-- Sign In Start -->
+        <!-- 404 Start -->
         <div class="container-fluid">
             <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
                 
-
-                
-                <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
-                    <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="container-fluid pt-4 px-4">
+                    <div class="row vh-100 bg-secondary rounded align-items-center justify-content-center mx-0">
+                        <div class="col-md-6 text-center p-4">
+                            <i class="bi bi-exclamation-triangle display-1 text-primary"></i>
+                            <h1 class="display-1 fw-bold">Tez orada</h1>
                             
-                            <a href="" class="">
-                                <h3 class="text-primary">Vali-Teach</h3>
-                            </a>
-                            <h3>Tizimga kirish</h3>
+                            <p class="mb-4">Ushbu bo'lim tez orada ishlab chiqiladi</p>
+                            <a href="{% url "home" %}" class="btn btn-primary rounded-pill py-3 px-5" href="">Asosiy sahifaga o'ting</a>
                         </div>
-                        <form action="{% url 'login' %}" method="post" >
-                            {% csrf_token %}
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" name="username" id="floatingInput" placeholder="username">
-                                <label for="floatingInput">username</label>
-                            </div>
-                            <div class="form-floating mb-4 position-relative">
-                                <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Parol">
-                                <label for="floatingPassword">parol</label>
-                                <i class="fa fa-eye position-absolute top-50 end-0 translate-middle-y" id="togglePassword" style="padding-right: 10px;"></i>
-                            </div>
-                            
-                        {% if messages %}
-                        <div class="messages">
-                            {% for message in messages %}
-                            <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
-                            {% endfor %}
-                        </div>
-                        {% endif %}
-                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Kirish</button>
-                        <p class="text-center mb-0">Username va parolni unutdingizmi?  <a href="https://t.me/husniddin092">Bizga ayting</a></p>
-                    </form>
                     </div>
                 </div>
-      
             </div>
         </div>
-        <script>
-            document.querySelector("#togglePassword").addEventListener("click", function(e) {
-            const passwordInput = document.querySelector("#floatingPassword");
-            const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
-            passwordInput.setAttribute("type", type);
-            this.classList.toggle("fa-eye-slash");
-        });
-
-        </script>
-        <!-- Sign In End -->
+        <!--404  End -->
     </div>
 
     <!-- JavaScript Libraries -->

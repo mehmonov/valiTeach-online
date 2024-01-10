@@ -13,9 +13,9 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Qo'shimcha</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="button.html" class="dropdown-item">Savol berish</a>
-                            <a href="typography.html" class="dropdown-item">Test ishlash</a>
-                            <a href="element.html" class="dropdown-item">Ma'lumot olish</a>
+                            <a href="https://t.me/husniddin092" class="dropdown-item">Savol berish</a>
+                            <a href="{% url "blank" %}" class="dropdown-item">Test ishlash</a>
+                            <a href="{% url "info" %}" class="dropdown-item">Ma'lumot olish</a>
                         </div>
                     </div>
                     {% for lesson in lessons %}
@@ -55,35 +55,16 @@
                         </div>
                     </div>
                 </a>
+                
                 <hr class="dropdown-divider">
-                <a href="#" class="dropdown-item">
-                    <div class="d-flex align-items-center">
-                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                        <div class="ms-2">
-                            <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                            <small>15 minutes ago</small>
-                        </div>
-                    </div>
-                </a>
-                <hr class="dropdown-divider">
-                <a href="#" class="dropdown-item">
-                    <div class="d-flex align-items-center">
-                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                        <div class="ms-2">
-                            <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                            <small>15 minutes ago</small>
-                        </div>
-                    </div>
-                </a>
-                <hr class="dropdown-divider">
-                <a href="#" class="dropdown-item text-center">See all message</a>
+                <a href="#" class="dropdown-item text-center">Barcha habarlar</a>
             </div>
         </div>
    
         <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                 <img class="rounded-circle me-lg-2" src="{% static 'img/user.jpg' %}" alt="" style="width: 40px; height: 40px;">
-                <span class="d-none d-lg-inline-flex">John Doe</span>
+                <span class="d-none d-lg-inline-flex">{{request.user.first_name}}</span>
             </a>
             <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                 <a href="{% url "my_profil" %}" class="dropdown-item">Profilim</a>                

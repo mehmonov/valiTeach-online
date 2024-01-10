@@ -41,58 +41,23 @@
         <!-- Spinner End -->
 
 
-        <!-- Sign In Start -->
+        <!-- infoStart -->
         <div class="container-fluid">
             <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
-                
+            
+                    <a href="{% url 'home'  %}" class="btn btn-info sticky-top">Asosiy sahifa</a>
 
-                
-                <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
-                    <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
-                            
-                            <a href="" class="">
-                                <h3 class="text-primary">Vali-Teach</h3>
-                            </a>
-                            <h3>Tizimga kirish</h3>
-                        </div>
-                        <form action="{% url 'login' %}" method="post" >
-                            {% csrf_token %}
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" name="username" id="floatingInput" placeholder="username">
-                                <label for="floatingInput">username</label>
-                            </div>
-                            <div class="form-floating mb-4 position-relative">
-                                <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Parol">
-                                <label for="floatingPassword">parol</label>
-                                <i class="fa fa-eye position-absolute top-50 end-0 translate-middle-y" id="togglePassword" style="padding-right: 10px;"></i>
-                            </div>
-                            
-                        {% if messages %}
-                        <div class="messages">
-                            {% for message in messages %}
-                            <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
-                            {% endfor %}
-                        </div>
-                        {% endif %}
-                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Kirish</button>
-                        <p class="text-center mb-0">Username va parolni unutdingizmi?  <a href="https://t.me/husniddin092">Bizga ayting</a></p>
-                    </form>
+            
+                <div class="container-fluid pt-4 px-4">
+                <div class="row vh-100 bg-secondary rounded align-items-center justify-content-center mx-0">
+                <h3>Ro'yhatdan o'tish</h3> 
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/PZUr2YyYmFY?si=HFl8A-3MBzfepqk9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
-                </div>
-      
+                    </div>
+
             </div>
         </div>
-        <script>
-            document.querySelector("#togglePassword").addEventListener("click", function(e) {
-            const passwordInput = document.querySelector("#floatingPassword");
-            const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
-            passwordInput.setAttribute("type", type);
-            this.classList.toggle("fa-eye-slash");
-        });
-
-        </script>
-        <!-- Sign In End -->
+        <!-- info End -->
     </div>
 
     <!-- JavaScript Libraries -->

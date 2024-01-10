@@ -44,3 +44,8 @@ class AddToken(FormView):
     def form_valid(self, form):
         form.save()
         return super().form_valid(form)
+
+def blank(request):
+    return render(request, '404.html')
+def info(request):
+    return render(request, 'info.html')

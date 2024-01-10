@@ -13,15 +13,12 @@
                     <a href="" class="nav-item nav-link active">Muhim bo'limlar</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Kurslar</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="button.html" class="dropdown-item">Telegram bot</a>
-                            <a href="typography.html" class="dropdown-item">Django web dasturlash</a>
-                            <a href="element.html" class="dropdown-item">Barcha kurslar</a>
-                        </div>
+                       
                     </div>
                    
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Testlar</a>
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Savol berish</a>
+                    <a href="{% url 'blank' %}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Testlar</a>
+                    <a href="{% url 'blank' %}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Savol berish</a>
+                    <a href="http://127.0.0.1:8000/admin/users/user/" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Qo'shimcha </a>
                     
                 </div>
             </nav>
@@ -47,7 +44,7 @@
             <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                 <a href="{% url "my_profil" %}" class="dropdown-item">Profilim</a>                
                 <a href="{% url "logout" %}" class="dropdown-item">Chiqish</a>
-            
+                
             </div>
         </div>
     </div>
